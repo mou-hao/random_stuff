@@ -4,13 +4,34 @@ on:
   push
 
 jobs:
-  test-matrix:
+  gen-mytrix:
+    name: Generate Mytrix
     runs-on: ubuntu-latest
+    outputs:
+      mytrix: ${{ steps.gen-mytrix.outputs.mytrix }}
+    steps:
+      - name: Assemble string
+        id: gen-string
+        run: |
+          echo 'string=["a", "b"]' >> $GITHUB_OUTPUT
+      - name: Gen mytrix
+        id: gen-mytrix
+        uses: actions/github-script@v7
+        with:
+          script:
+            core.setOutput("mytrix", JSON.stringify(${{ steps.gen-string.outputs.string }}))
+      - name: List all
+        run: |
+          echo '${{ steps.gen-mytrix.outputs.mytrix }}'
+
+  mytrix-job:
+    name: Run Mytrix Job
+    runs-on: ubuntu-latest
+    needs: gen-mytrix
     strategy:
       matrix:
-        letter: ["a", "b", "c"]
+        letters: ${{ fromJSON(needs.gen-mytrix.outputs.mytrix) }}
     steps:
-      - name: Print letter
-        shell: bash
-        run: echo ${{ matrix.letter }}
-
+      - name: Echo
+        run: |
+          echo ${{ matrix.letters }}
