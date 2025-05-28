@@ -1,0 +1,16 @@
+name: Test
+
+on:
+  push
+
+jobs:
+  test-matrix:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        letter: ["a", "b", "c"]
+    steps:
+      - name: Print letter
+        shell: bash
+        run: echo ${{ matrix.letter }}
+
