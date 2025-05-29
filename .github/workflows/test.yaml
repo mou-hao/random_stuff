@@ -13,7 +13,8 @@ jobs:
       - name: Gen mytrix
         id: gen-mytrix
         run: |
-          echo 'mytrix=["a", "n"]' >> $GITHUB_OUTPUT
+          MYTRIX='["a","b"]'
+          echo "mytrix=$MYTRIX" >> $GITHUB_OUTPUT
       - name: List all
         run: |
           echo '${{ steps.gen-mytrix.outputs.mytrix }}'
