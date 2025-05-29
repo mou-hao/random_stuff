@@ -10,16 +10,10 @@ jobs:
     outputs:
       mytrix: ${{ steps.gen-mytrix.outputs.mytrix }}
     steps:
-      - name: Assemble string
-        id: gen-string
-        run: |
-          echo 'string=["a", "b"]' >> $GITHUB_OUTPUT
       - name: Gen mytrix
         id: gen-mytrix
-        uses: actions/github-script@v7
-        with:
-          script:
-            core.setOutput("mytrix", JSON.stringify(${{ steps.gen-string.outputs.string }}))
+        run: |
+          echo 'mytrix=["a", "n"]' >> $GITHUB_OUTPUT
       - name: List all
         run: |
           echo '${{ steps.gen-mytrix.outputs.mytrix }}'
