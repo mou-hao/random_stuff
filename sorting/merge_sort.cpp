@@ -44,7 +44,7 @@ void merge_sort_recursive(std::vector<int>& nums) {
     if (nums.size() < 2) return;
     std::vector<int> helper_v(nums.size());
     r_helper(nums, 0, nums.size(), helper_v);
-} 
+}
 
 void merge_sort_iterative(std::vector<int>& nums) {
     if (nums.size() < 2) return;

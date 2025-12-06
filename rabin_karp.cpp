@@ -4,7 +4,7 @@
 class Hash {
  public:
   Hash(const std::string& str, size_t begin, size_t end) {
-    for (size_t ind = begin; ind < end; ++ind) { hash_ += str[ind]; } 
+    for (size_t ind = begin; ind < end; ++ind) { hash_ += str[ind]; }
   }
 
   Hash(const std::string& str) : Hash(str, 0, str.size()) {}
@@ -35,14 +35,14 @@ void RkSearch(const std::string& str, const std::string& pat) {
       if (j == pat.size()) {
         std::cout << "Found pattern at index " << i << "\n";
       }
-    } 
+    }
   }
 }
 
 int main() {
   std::string str;
   std::string pat;
-  std::cout << "KMP algorithm: search occurences of a pattern in a string in O(n) time\n" 
+  std::cout << "KMP algorithm: search occurences of a pattern in a string in O(n) time\n"
             << "----------------------------------------------------------------------\n"
             << "string:" << std::endl;
   std::getline(std::cin, str);

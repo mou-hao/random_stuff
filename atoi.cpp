@@ -26,7 +26,7 @@ namespace {
 int main(int argc, char* argv[]) {
     if (argc != 2) {
         std::cerr << "Usage: atoi num_string\n";
-        return 1; 
+        return 1;
     }
     auto res = atoi(std::string(argv[1]));
     std::cout << (res.first ? "valid" : "invalid") << " " << res.second << "\n";

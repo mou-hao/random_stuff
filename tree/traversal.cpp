@@ -12,13 +12,13 @@ void iter_inorder(TreeNode* root) {
       st.push_back(cur);
       cur = cur->left;
     }
-    
+
     root = st.back();
     st.pop_back();
     std::cout << root->val << ' ';
     cur = root->right;
   }
-  
+
   std::cout << '\n';
 }
 
@@ -55,7 +55,7 @@ void iter_postorder(TreeNode* root) {
     }
     if (root->right) {
       left_st.push_back(root->right);
-    }  
+    }
   }
 
   while (st.size()) {
@@ -135,11 +135,11 @@ int main() {
    *  3     4   5
    *             6
    */
-  std::vector<int> tree = 
+  std::vector<int> tree =
     {0, 1, 2, 3, -1, 4, 5, -1, -1, -1, -1, -1, -1, -1, 6};
   TreeNode* root = build_tree(tree);
- 
-  std::cout << "Iterative inorder:\n"; 
+
+  std::cout << "Iterative inorder:\n";
   iter_inorder(root);
 
   std::cout << "Iterative preorder:\n";

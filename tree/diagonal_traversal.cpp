@@ -32,12 +32,12 @@ int main() {
    *  3     4   5
    *         6 7 8
    */
-  std::vector<int> tree = 
+  std::vector<int> tree =
     {0, 1, 2, 3, -1, 4, 5, -1, -1, -1, -1, -1, 6, 7, 8};
   TreeNode* root = build_tree(tree);
-  
+
   diag_traverse(root);
-  
+
   delete_tree(root);
   return 0;
 }

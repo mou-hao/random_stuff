@@ -7,7 +7,7 @@
 
 std::vector<std::vector<int>> floyd_warhsall(const std::vector<std::vector<int>>& adjacency) {
   if (adjacency.empty()) return {};
-  
+
   std::vector<std::vector<int>> dists = adjacency;
   int N = adjacency.size();
   for (int i = 0; i < N; ++i) {
@@ -44,6 +44,6 @@ int main(int argc, char **argv) {
     }
     std::cout << '\n';
   }
- 
+
   return 0;
 }

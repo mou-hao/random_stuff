@@ -9,7 +9,7 @@
 // when a mismatch happens when S[m+i] != W[i].
 // The next possible match will start at m+i-T[i],
 // and we do not need to check the first T[i] characters.
-// In practice, we just need to check whether S[m+i] == W[T[i-1]] if i > 0. 
+// In practice, we just need to check whether S[m+i] == W[T[i-1]] if i > 0.
 std::vector<int> computeLPS(std::string& pat) {
     std::vector<int> lps (pat.size());
     lps[0] = 0;
@@ -53,7 +53,7 @@ void KMPsearch(std::string& str, std::string& pat) {
 int main() {
     std::string str;
     std::string pat;
-    std::cout << "KMP algorithm: search occurences of a pattern in a string in O(n) time\n" 
+    std::cout << "KMP algorithm: search occurences of a pattern in a string in O(n) time\n"
               << "----------------------------------------------------------------------\n"
               << "string:" << std::endl;
     std::getline(std::cin, str);
@@ -62,4 +62,3 @@ int main() {
     KMPsearch(str, pat);
     return 0;
 }
-

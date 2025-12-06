@@ -34,7 +34,7 @@ int main() {
         std::cin >> algo_num;
     }
     sorting_algos[algo_num].second(nums);
-    
+
     std::cerr << "\nSorted list:";
     for (auto num : nums) {
         std::cout << std::to_string(num) << " ";

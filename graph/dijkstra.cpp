@@ -9,9 +9,9 @@
 
 std::vector<int> dijkstra(const std::vector<std::vector<int>> &adjacency) {
   if (adjacency.empty()) return {};
- 
+
   std::vector<int> res(adjacency.size(), std::numeric_limits<int>::max());
-  using Pii = std::pair<int, int>; 
+  using Pii = std::pair<int, int>;
   auto cmp = [](Pii left, Pii right) { return left.second > right.second; };
   std::priority_queue<Pii, std::vector<Pii>, decltype(cmp)> to_visit(cmp);
   to_visit.push({0, 0});

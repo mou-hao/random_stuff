@@ -15,7 +15,7 @@ int lcs(std::string& str1, std::string& str2) {
     std::swap(this_row, last_row);
     for (size_t i = 0; i < M; ++i) {
       if (str1[i] == c) {
-        this_row[i+1] = last_row[i]+1; 
+        this_row[i+1] = last_row[i]+1;
       } else {
         this_row[i+1] = std::max(last_row[i+1], this_row[i]);
       }

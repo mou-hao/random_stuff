@@ -17,7 +17,7 @@ bool find_path(AdjacencyMatrix& adjacency, std::vector<int>& path) {
     int v = q.front();
     q.pop();
     for (int i = 0; i < N; ++i) {
-      if (i == v || path[i] >= 0 || adjacency[i][v] == 0 
+      if (i == v || path[i] >= 0 || adjacency[i][v] == 0
           || adjacency[i][v] == std::numeric_limits<int>::max()) {
         continue;
       }
@@ -32,7 +32,7 @@ bool find_path(AdjacencyMatrix& adjacency, std::vector<int>& path) {
 int find_flow(AdjacencyMatrix& adjacency, const std::vector<int>& path) {
   int N = adjacency.size();
   int flow = std::numeric_limits<int>::max();
-  
+
   int v = N - 1;
   while (v) {
     flow = std::min(flow, adjacency[v][path[v]]);
@@ -51,7 +51,7 @@ int find_flow(AdjacencyMatrix& adjacency, const std::vector<int>& path) {
 
 int ford_fulkerson(AdjacencyMatrix& adjacency) {
   int N = adjacency.size();
-  
+
   int max_flow = 0;
   std::vector<int> path(N, -1);
   while (find_path(adjacency, path)) {

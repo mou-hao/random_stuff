@@ -31,7 +31,7 @@ class DisjointSets {
         parent_[s2] = s1;
         rank_[s1] += rank_[s2];
       }
-    }  
+    }
   }
 
  private:
@@ -66,7 +66,7 @@ int kruskal(const AdjacencyMatrix& adjacency) {
       sets.join(u, v);
       ++num_edge;
     }
-  }  
+  }
 
   return res;
 }

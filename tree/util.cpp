@@ -23,7 +23,7 @@ TreeNode* build_tree(const std::vector<int>& tree) {
 
 void recur_collapse(TreeNode* node, std::vector<int>& tree, std::size_t pos) {
   if (!node) return;
-  
+
   if (pos >= tree.size()) tree.resize(pos + 1, -1);
   tree[pos] = node->val;
   recur_collapse(node->left, tree, pos * 2 + 1);
